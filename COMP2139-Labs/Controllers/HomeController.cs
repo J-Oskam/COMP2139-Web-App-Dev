@@ -14,7 +14,7 @@ namespace COMP2139_Labs.Controllers {
             return View();
         }
 
-        public IActionResult Privacy() {
+        public IActionResult About() {
             return View();
         }
 
