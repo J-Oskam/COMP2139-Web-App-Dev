@@ -1,11 +1,23 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    var name = "Justin Oskam";
+    var studentNumber = "100851894";
+    var courseCode = "COMP 2139";
+    var courseSection = "N/A";
+    var term = "Winter 2024";
 }
-<h1 class="text-center display-4">About Me</h1>
-<ul>
-    <li>Name: Justin Oskam</li>
-    <li>Student Number: 100851894</li>
-    <li>Course Code: COMP 2139</li>
-    <li>Course Section: N/A</li>
-    <li>Term: Winter 2024</li>
-</ul>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web Application Development</title>
+    </head>
+
+    <body>
+        <h1>Welcome to my page</h1>
+        <p>Name: @name</p>
+        <p>Student Number: @studentNumber</p>
+        <p>Course Code: @courseCode</p>
+        <p>Course Section: @courseSection</p>
+        <p>Term: @term</p>
+    </body>
+</html>
