@@ -1,21 +1,48 @@
-﻿@model Project
+﻿@model COMP2139_Labs.Models.Project
 
 @{
-    ViewData["Title"] = "Project Details";
+    ViewData["Title"] = "Details";
 }
 
-<h2>Project Details</h2>
+<h1>Details</h1>
 
-<div class="card">
-    <div class="card-body">
-        <h3 class="card-title">@Model.Name</h3>
-        <p class="card-text">@Model.Description</p>
-
-        <dl class="row">
-            <dt class="col-sm-3">Project ID</dt>
-            <dd class="col-sm-9">@Model.ProjectID</dd>
-        </dl>
-        <a asp-controller="projects" asp-action="Edit" asp-route-id="@Model.ProjectID" class="btn btn-primary">Edit</a>
-        <a asp-controller="projects" asp-action="Index" class="btn btn-secondary">Back to List</a>
-    </div>
+<div>
+    <h4>Project</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ProjectID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>
