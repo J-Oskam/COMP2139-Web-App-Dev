@@ -50,6 +50,46 @@ namespace COMP2139_Labs.Migrations
 
                     b.ToTable("Projects");
                 });
+
+            modelBuilder.Entity("COMP2139_Labs.Models.ProjectTask", b =>
+                {
+                    b.Property<int>("ProjectTaskId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectTaskId"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProjectTaskId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectTasks");
+                });
+
+            modelBuilder.Entity("COMP2139_Labs.Models.ProjectTask", b =>
+                {
+                    b.HasOne("COMP2139_Labs.Models.Project", "Project")
+                        .WithMany("Tasks")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("COMP2139_Labs.Models.Project", b =>
+                {
+                    b.Navigation("Tasks");
+                });
 #pragma warning restore 612, 618
         }
     }

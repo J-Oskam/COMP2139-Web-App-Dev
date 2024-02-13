@@ -12,7 +12,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
-                <th>Action</th>
+                <th>Action</th> <!-- column for action buttons, details, edit, delete-->
             </tr>
         </thead>
 
@@ -24,6 +24,7 @@
                     <td>@project.Description</td>
                     <td>
                         <a asp-action="Details" asp-route-id="@project.ProjectID" class="btn btn-info">Details</a>
+                        <a asp-action="Edit" asp-route-id="@project.ProjectID" class="btn btn-secondary">Edit</a>
                         <a asp-action="Delete" asp-route-id="@project.ProjectID" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
@@ -34,6 +35,4 @@
     <p>No projects found.</p>
 }
 
-<p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Projects" asp-action="Create">Create Project</a>
-</p>
+<a asp-controller="Projects" asp-action="Create" class="btn btn-primary">Create New Project</a>

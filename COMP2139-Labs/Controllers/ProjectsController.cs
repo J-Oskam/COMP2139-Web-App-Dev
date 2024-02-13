@@ -13,9 +13,6 @@ namespace COMP2139_Labs.Controllers {
 
         [HttpGet]
         public IActionResult Index() {
-            /*var projects = new List<Project>() { 
-                new Project { ProjectID = 1, Name = "Project 1", Description = "First project" } 
-            }; //These are the hardcoded values*/
             return View(_db.Projects.ToList());
         }
 
@@ -74,7 +71,7 @@ namespace COMP2139_Labs.Controllers {
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] //I think something is going wrong here which prevents my projects from being posted
         public IActionResult Create(Project project) {
             if (ModelState.IsValid) {
                 _db.Projects.Add(project);
