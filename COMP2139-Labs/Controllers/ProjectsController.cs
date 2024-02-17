@@ -24,6 +24,8 @@ namespace COMP2139_Labs.Controllers {
             }
             return View(project);
         }
+
+        [HttpGet]
         public IActionResult Edit(int id) {
             var project = _db.Projects.Find(id);
             if (project == null) {
@@ -53,6 +55,7 @@ namespace COMP2139_Labs.Controllers {
             return View(project);
         }
 
+        [HttpGet]
         public IActionResult Delete(int id) {
             var project = _db.Projects.FirstOrDefault(p => p.ProjectID == id);
             if (project == null) {
@@ -61,6 +64,7 @@ namespace COMP2139_Labs.Controllers {
             return View(project);
         }
 
+        [HttpGet]
         private bool ProjectExists(int id) {
             return _db.Projects.Any(e => e.ProjectID == id);
         }
@@ -71,7 +75,7 @@ namespace COMP2139_Labs.Controllers {
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken] //I think something is going wrong here which prevents my projects from being posted
+        [ValidateAntiForgeryToken]
         public IActionResult Create(Project project) {
             if (ModelState.IsValid) {
                 _db.Projects.Add(project);
@@ -80,6 +84,7 @@ namespace COMP2139_Labs.Controllers {
             }
             return View(project);
         }
+
 
         [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
