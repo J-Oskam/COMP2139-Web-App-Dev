@@ -36,13 +36,14 @@ namespace COMP2139_Labs.Controllers {
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectId, Name, Description")] Project project) {
+        public IActionResult Edit(int id, [Bind("ProjectID, Name, Description, StartDate, EndDate, Status")] Project project) {
             if(id != project.ProjectID) {
                 return NotFound();
             }
             if(ModelState.IsValid) {
                 try {
                     _db.Update(project);
+                    _db.SaveChanges();
                 } catch (DbUpdateConcurrencyException) {
                     if (!ProjectExists(project.ProjectID)) {
                         return NotFound();
