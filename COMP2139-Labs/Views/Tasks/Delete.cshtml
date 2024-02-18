@@ -33,9 +33,9 @@
 </div>
 
     <form asp-action="DeleteConfirmed" method="post">
-        @Html.HiddenFor(model => model.ProjectTaskId)
+    @Html.HiddenFor(model => model.ProjectTaskID)
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" asp-route-projectId="@Model.ProjectId">Cancel</a>
+        <a asp-action="Index" asp-route-projectId="@Model.ProjectID">Cancel</a>
     </form>
 
 @section Scripts {

@@ -17,7 +17,7 @@ namespace COMP2139_Labs.Models {
         public DateTime EndDate { get; set; }
         public string? Status { get; set; }
 
-        //public List<ProjectTask>? Tasks { get; set; }
+        public List<ProjectTask>? Tasks { get; set; }
 
     }
 }

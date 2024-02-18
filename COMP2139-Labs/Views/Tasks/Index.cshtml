@@ -19,14 +19,14 @@
     <tbody>
         @foreach (var task in Model) {
             <tr>
-                <td>@task.ProjectTaskId</td>
+                <td>@task.ProjectTaskID</td>
                 <td>@task.Title</td>
                 <td>@task.Description</td>
-                <td>@task.ProjectId</td>
+                <td>@task.ProjectID</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@task.ProjectId" class="btn btn-info">Details</a>
-                    <a asp-action="Edit" asp-route-id="@task.ProjectId" class="btn btn-secondary">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@task.ProjectId" class="btn btn-danger">Delete</a>
+                    <a asp-action="Details" asp-route-id="@task.ProjectID" class="btn btn-info">Details</a>
+                    <a asp-action="Edit" asp-route-id="@task.ProjectID" class="btn btn-secondary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@task.ProjectID" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
         }

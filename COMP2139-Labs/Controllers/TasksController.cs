@@ -8,17 +8,17 @@ namespace COMP2139_Labs.Controllers {
     public class TasksController : Controller {
         private readonly AppDbContext _db;
 
-        public TasksController(AppDbContext context) {
-            _db = context;
+        public TasksController(AppDbContext db) {
+            _db = db;
         }
         public IActionResult Index(int projectId) {
-            var tasks = _db.ProjectTasks.Where(t => t.ProjectId == projectId).ToList();
+            var tasks = _db.ProjectTasks.Where(t => t.ProjectID == projectId).ToList();
             ViewBag.ProjectId = projectId; // Store projectId in viewbag
             return View(tasks);
         }
 
         public IActionResult Details(int id) {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(task => task.ProjectId == id);
+            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
 
             if(task == null) {
                 return NotFound();
@@ -33,7 +33,7 @@ namespace COMP2139_Labs.Controllers {
             }
 
             var task = new ProjectTask() {
-                ProjectId = projectId
+                ProjectID = projectId
             };
             return View(task);
         }
@@ -44,61 +44,61 @@ namespace COMP2139_Labs.Controllers {
             if (ModelState.IsValid) {
                 _db.ProjectTasks.Add(task);
                 _db.SaveChanges();
-                return RedirectToAction("Index", new { ProjectId = task.ProjectId });
+                return RedirectToAction(nameof(Index), new { projectID = task.ProjectID });
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectId", "Name", task.ProjectId);
+            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
         public IActionResult Edit(int id) {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskId == id);
+            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
             
             if(task == null) {
                 return NotFound();
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectId", "Name", task.ProjectId);
+            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectTaskId", "Title", "Description", "ProjectId")] ProjectTask task) {
-            if(id != task.ProjectTaskId) {
+        public IActionResult Edit(int id, [Bind("ProjectTaskID", "Title", "Description", "ProjectID")] ProjectTask task) {
+            if(id != task.ProjectTaskID) {
                 return NotFound();
             }
 
             if (ModelState.IsValid) {
                 _db.ProjectTasks.Update(task);
                 _db.SaveChanges();
-                return RedirectToAction("Index", new { ProjectId = task.ProjectId });
+                return RedirectToAction("Index", new { ProjectID = task.ProjectID });
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectId", "Name", task.ProjectId);
+            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
         public IActionResult Delete(int id) {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskId == id);
+            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
 
             if (task == null) {
                 return NotFound();
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectId", "Name", task.ProjectId);
+            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
         [HttpPost, ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int projectTaskId) {
+        public IActionResult DeleteConfirmed(int ProjectTaskID) {
 
-            var task = _db.ProjectTasks.Find(projectTaskId);
+            var task = _db.ProjectTasks.Find(ProjectTaskID);
             if (task != null) {
                 _db.ProjectTasks.Remove(task);
                 _db.SaveChanges();
-                return RedirectToAction("Index", new { ProjectId = task.ProjectId });
+                return RedirectToAction("Index", new { ProjectID = task.ProjectID });
             }
             return NotFound();
         }
