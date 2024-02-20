@@ -53,24 +53,26 @@ namespace COMP2139_Labs.Migrations
 
             modelBuilder.Entity("COMP2139_Labs.Models.ProjectTask", b =>
                 {
-                    b.Property<int>("ProjectTaskId")
+                    b.Property<int>("ProjectTaskID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectTaskId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectTaskID"));
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProjectId")
+                    b.Property<int>("ProjectID")
                         .HasColumnType("int");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ProjectTaskId");
+                    b.HasKey("ProjectTaskID");
 
-                    b.HasIndex("ProjectId");
+                    b.HasIndex("ProjectID");
 
                     b.ToTable("ProjectTasks");
                 });
@@ -79,7 +81,7 @@ namespace COMP2139_Labs.Migrations
                 {
                     b.HasOne("COMP2139_Labs.Models.Project", "Project")
                         .WithMany("Tasks")
-                        .HasForeignKey("ProjectId")
+                        .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

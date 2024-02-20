@@ -5,16 +5,15 @@
 }
 
 <h1>Task Details</h1>
+<hr />
 
 <div>
-    <h4>Tasks</h4>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.Title) <!--name of column-->
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
+            @Html.DisplayFor(model => model.Title) <!--actual value-->
         </dd>
 
         <dt class="col-sm-2">

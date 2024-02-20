@@ -18,7 +18,7 @@ namespace COMP2139_Labs.Controllers {
         }
 
         public IActionResult Details(int id) {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
+            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(task => task.ProjectID == id);
 
             if(task == null) {
                 return NotFound();
@@ -44,7 +44,7 @@ namespace COMP2139_Labs.Controllers {
             if (ModelState.IsValid) {
                 _db.ProjectTasks.Add(task);
                 _db.SaveChanges();
-                return RedirectToAction(nameof(Index), new { projectID = task.ProjectID });
+                return RedirectToAction("Index", new { projectID = task.ProjectID });
             }
 
             ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
