@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\views\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:views\\tasks\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 174,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TasksController.cs",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\TasksController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\TasksController.cs",
-              "RelativeToolTip": "Controllers\\TasksController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T17:56:49.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Projects\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Projects\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Projects\\Index.cshtml",
-              "RelativeToolTip": "Views\\Projects\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-20T17:31:38.68Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Tasks\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Tasks\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Tasks\\Index.cshtml",
-              "RelativeToolTip": "Views\\Tasks\\Index.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-02-20T17:31:31.052Z",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T04:02:24.938Z",
               "EditorCaption": ""
             }
           ]

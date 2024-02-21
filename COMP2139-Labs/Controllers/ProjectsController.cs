@@ -4,6 +4,7 @@ using COMP2139_Labs.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace COMP2139_Labs.Controllers {
+    [Route("Projects")]
     public class ProjectsController : Controller {
 
         private readonly AppDbContext _db;
@@ -11,12 +12,12 @@ namespace COMP2139_Labs.Controllers {
             _db = db;
         }
 
-        [HttpGet]
+        [HttpGet("")]
         public IActionResult Index() {
             return View(_db.Projects.ToList());
         }
 
-        [HttpGet]
+        [HttpGet("Details/{id:int}")]
         public IActionResult Details(int id) {
             var project = _db.Projects.FirstOrDefault(p => p.ProjectID == id);
             if (project == null) {
@@ -25,7 +26,7 @@ namespace COMP2139_Labs.Controllers {
             return View(project);
         }
 
-        [HttpGet]
+        [HttpGet("Edit/{id:int}")]
         public IActionResult Edit(int id) {
             var project = _db.Projects.Find(id);
             if (project == null) {
@@ -34,7 +35,7 @@ namespace COMP2139_Labs.Controllers {
             return View(project);
         }
 
-        [HttpPost]
+        [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind("ProjectID, Name, Description, StartDate, EndDate, Status")] Project project) {
             if(id != project.ProjectID) {
@@ -56,7 +57,7 @@ namespace COMP2139_Labs.Controllers {
             return View(project);
         }
 
-        [HttpGet]
+        [HttpGet("Delete/{id:int}")]
         public IActionResult Delete(int id) {
             var project = _db.Projects.FirstOrDefault(p => p.ProjectID == id);
             if (project == null) {
@@ -70,12 +71,12 @@ namespace COMP2139_Labs.Controllers {
             return _db.Projects.Any(e => e.ProjectID == id);
         }
 
-        [HttpGet]
+        [HttpGet("Create")]
         public IActionResult Create() {
             return View();
         }
 
-        [HttpPost]
+        [HttpPost("Create")]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Project project) {
             if (ModelState.IsValid) {
@@ -87,7 +88,7 @@ namespace COMP2139_Labs.Controllers {
         }
 
 
-        [HttpPost, ActionName("DeleteConfirmed")]
+        [HttpPost("DeleteConfirmed/{id:int}"), ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int ProjectId) {
             var project = _db.Projects.Find(ProjectId);
@@ -98,6 +99,24 @@ namespace COMP2139_Labs.Controllers {
             }
             //handle the case where the project might not be found
             return NotFound();
+        }
+
+        [HttpGet("Search/{searchString?}")]
+        public async Task<IActionResult> Search(string searchString) {
+            var projectsQuery = from p in _db.Projects
+                                select p;
+
+            bool searchPerformed = !String.IsNullOrEmpty(searchString);
+
+            if (searchPerformed) {
+                projectsQuery = projectsQuery.Where(p => p.Name.Contains(searchString)
+                                              || p.Description.Contains(searchString));
+            }
+
+            var projects = await projectsQuery.ToListAsync();
+            ViewData["SearchPerformed"] = searchPerformed;
+            ViewData["SearchString"] = searchString;
+            return View("Index", projects); //Reuse the Index view to display results
         }
     }
 }

@@ -254,9 +254,9 @@ C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\st
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\scopedcss\bundle\COMP2139-Labs.styles.css
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\scopedcss\projectbundle\COMP2139-Labs.bundle.scp.css
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139.FD485C04.Up2Date
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\refint\COMP2139-Labs.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.pdb
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.genruntimeconfig.cache
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\ref\COMP2139-Labs.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139.FD485C04.Up2Date
