@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -39,19 +35,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T04:17:03.934Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "ProjectsController.cs",
               "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\ProjectsController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
@@ -64,7 +47,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -72,8 +55,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T04:02:24.938Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-02-21T04:02:24.938Z"
             }
           ]
         }
