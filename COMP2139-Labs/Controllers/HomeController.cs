@@ -1,5 +1,6 @@
 using COMP2139_Labs.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using System.Diagnostics;
 
 namespace COMP2139_Labs.Controllers {
@@ -16,6 +17,24 @@ namespace COMP2139_Labs.Controllers {
 
         public IActionResult About() {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult GeneralSearch(string searchType, string searchString) {
+            if(searchType == "Projects") {
+                return RedirectToAction("search", "Projects", new { searchString }); //Redirect to projects search
+            } else if(searchType=="Tasks"){
+                int defaultProjectID = 1;
+                return RedirectToAction("Search", "Tasks", new { projectID = defaultProjectID, searchString }); //Redirect to tasks search assuming default projectID
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult NotFound(int statusCode) {
+            if(statusCode == 404) {
+                return View("NotFound");
+            }
+            return View("Error");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
