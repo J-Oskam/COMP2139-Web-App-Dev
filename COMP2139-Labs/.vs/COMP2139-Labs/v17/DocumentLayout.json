@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:views\\projects\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 174,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -33,29 +37,47 @@
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProjectsController.cs",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\ProjectsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Controllers\\ProjectsController.cs",
-              "RelativeToolTip": "Controllers\\ProjectsController.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T04:11:23.278Z",
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-02-24T15:20:08.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-21T04:02:24.938Z"
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-24T15:20:03.766Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Projects\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Projects\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Views\\Projects\\Index.cshtml",
+              "RelativeToolTip": "Views\\Projects\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-24T15:04:23.312Z",
+              "EditorCaption": ""
             }
           ]
         }
