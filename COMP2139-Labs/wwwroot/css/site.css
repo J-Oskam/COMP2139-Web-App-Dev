@@ -26,13 +26,13 @@ body {
     background-color:bisque;
 }
 
-.navbar .dropdown-toggle{
-    color:white;
-    background-color:#007bff;
-    border-color:#007bff;
-}
+.navbar .dropdown-toggle {
+     color:#007bff;
+     background-color: white;
+     border-color: #007bff;
+ }
 
 .navbar .dropdown-toggle:hover{
-    color:#007bff;
-    background-color:white;
+    color:white;
+    background-color:#007bff;
 }
