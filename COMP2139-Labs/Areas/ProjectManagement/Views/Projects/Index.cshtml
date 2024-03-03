@@ -14,6 +14,7 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Description</th>
+                <th>Summary</th>
                 <th>Action</th> <!-- column for action buttons, details, edit, delete-->
             </tr>
         </thead>
@@ -24,6 +25,9 @@
                     <td>@project.ProjectID</td>
                     <td>@project.Name</td>
                     <td>@project.Description</td>
+                    <td>
+                        @await Component.InvokeAsync("ProjectSummary", new {projectId = project.ProjectID})
+                    </td>
                     <td>
                         <a asp-action="Details" asp-route-id="@project.ProjectID" class="btn btn-info">Details</a>
                         <a asp-controller="Tasks" asp-action="Index" asp-route-projectId="@project.ProjectID" class="btn btn-warning">View Tasks</a>

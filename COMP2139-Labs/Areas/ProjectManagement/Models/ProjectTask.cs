@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace COMP2139_Labs.Models {
-    public class ProjectTask {
+namespace COMP2139_Labs.Areas.ProjectManagement.Models
+{
+    public class ProjectTask
+    {
         public int ProjectTaskID { get; set; }
         [Required]
         public string? Title { get; set; }
