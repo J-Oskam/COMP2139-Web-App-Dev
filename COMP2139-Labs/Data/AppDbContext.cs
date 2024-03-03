@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using COMP2139_Labs.Models;
+using COMP2139_Labs.Areas.ProjectManagement.Models;
 
-namespace COMP2139_Labs.Data {
+namespace COMP2139_Labs.Data
+{
     public class AppDbContext : DbContext {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {
             
