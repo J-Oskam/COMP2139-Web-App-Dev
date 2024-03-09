@@ -18,17 +18,24 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         }
 
         [HttpGet("Index/{projectID:int}")]
-        public IActionResult Index(int projectId)
+        public async Task<IActionResult> Index(int? projectId)
         {
-            var tasks = _db.ProjectTasks.Where(t => t.ProjectID == projectId).ToList();
+            var tasksQuery = _db.ProjectTasks.AsQueryable();
+
+            if (projectId.HasValue) {
+                tasksQuery = tasksQuery.Where(t => t.ProjectID == projectId.Value);
+            }
+
+            var tasks = await tasksQuery.ToListAsync();
             ViewBag.ProjectId = projectId; // Store projectId in viewbag
             return View(tasks);
         }
 
         [HttpGet("Details/{id:int}")]
-        public IActionResult Details(int id)
+        public async Task<IActionResult> Details(int id)
         {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(task => task.ProjectID == id);
+            var tasksQuery = _db.ProjectTasks.AsQueryable();
+            var task = await _db.ProjectTasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.ProjectTaskID == id);
 
             if (task == null)
             {
@@ -38,9 +45,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         }
 
         [HttpGet("Create/{projectID:int}")]
-        public IActionResult Create(int projectId)
+        public async Task<IActionResult> Create(int projectId)
         {
-            var project = _db.Projects.Find(projectId);
+            var project = await _db.Projects.FindAsync(projectId);
             if (project == null)
             {
                 return NotFound();
@@ -84,7 +91,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
         [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectTaskID", "Title", "Description", "ProjectID")] ProjectTask task)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectTaskID", "Title", "Description", "ProjectID")] ProjectTask task)
         {
             if (id != task.ProjectTaskID)
             {
@@ -93,9 +100,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.ProjectTasks.Update(task);
-                _db.SaveChanges();
-                return RedirectToAction("Index", new { task.ProjectID });
+                _db.Update(task);
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index", new { projectID = task.ProjectID });
             }
 
             ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
@@ -103,7 +110,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         }
 
         [HttpGet("Delete/{projectID:int}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
 
@@ -111,22 +118,20 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             {
                 return NotFound();
             }
-
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
-        [HttpPost("DeleteConfirmed/{id:int}"), ActionName("DeleteConfirmed")]
+        [HttpPost("DeleteConfirmed/{id:int}")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int ProjectTaskID)
+        public async Task<IActionResult> DeleteConfirmed(int ProjectTaskID)
         {
 
-            var task = _db.ProjectTasks.Find(ProjectTaskID);
+            var task = await _db.ProjectTasks.FindAsync(ProjectTaskID);
             if (task != null)
             {
                 _db.ProjectTasks.Remove(task);
-                _db.SaveChanges();
-                return RedirectToAction("Index", new { task.ProjectID });
+                await _db.SaveChangesAsync();
+                return RedirectToAction("Index", new { projectID = task.ProjectID });
             }
             return NotFound();
         }
