@@ -16,16 +16,18 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             _db = db;
         }
 
+        //GET: Projects
+        // ->/Projects
         [HttpGet("")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View(_db.Projects.ToList());
+            var projects = await _db.Projects.ToListAsync();
+            return View(projects);
         }
 
         [HttpGet("Details/{id:int}")]
-        public IActionResult Details(int id)
-        {
-            var project = _db.Projects.FirstOrDefault(p => p.ProjectID == id);
+        public async Task<IActionResult> Details(int id){
+            var project = await _db.Projects.FirstOrDefaultAsync(p => p.ProjectID == id);
             if (project == null)
             {
                 return NotFound();
@@ -34,9 +36,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         }
 
         [HttpGet("Edit/{id:int}")]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var project = _db.Projects.Find(id);
+            var project = await _db.Projects.FindAsync(id);
             if (project == null)
             {
                 return NotFound();
@@ -46,7 +48,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
         [HttpPost("Edit/{id:int}")]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("ProjectID, Name, Description, StartDate, EndDate, Status")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("ProjectID, Name, Description, StartDate, EndDate, Status")] Project project)
         {
             if (id != project.ProjectID)
             {
@@ -56,12 +58,12 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             {
                 try
                 {
-                    _db.Update(project);
-                    _db.SaveChanges();
+                    _db.Update(project); //update does not need await
+                    await _db.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProjectExists(project.ProjectID))
+                    if (!await ProjectExists(project.ProjectID))
                     {
                         return NotFound();
                     }
@@ -76,9 +78,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         }
 
         [HttpGet("Delete/{id:int}")]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
-            var project = _db.Projects.FirstOrDefault(p => p.ProjectID == id);
+            var project = await _db.Projects.FirstOrDefaultAsync(p => p.ProjectID == id);
             if (project == null)
             {
                 return NotFound();
@@ -87,9 +89,9 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         }
 
         [HttpGet]
-        private bool ProjectExists(int id)
+        private async Task<bool> ProjectExists(int id)
         {
-            return _db.Projects.Any(e => e.ProjectID == id);
+            return await _db.Projects.AnyAsync(e => e.ProjectID == id);
         }
 
         [HttpGet("Create")]
@@ -100,12 +102,12 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
         [HttpPost("Create")]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Project project)
+        public async Task<IActionResult> Create(Project project)
         {
             if (ModelState.IsValid)
             {
-                _db.Projects.Add(project);
-                _db.SaveChanges();
+                await _db.Projects.AddAsync(project);
+                await _db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(project);
@@ -114,13 +116,13 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
         [HttpPost("DeleteConfirmed/{id:int}"), ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteConfirmed(int ProjectId)
+        public async Task<IActionResult> DeleteConfirmed(int ProjectId)
         {
             var project = _db.Projects.Find(ProjectId);
             if (project != null)
             {
                 _db.Projects.Remove(project);
-                _db.SaveChanges();
+                await _db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             //handle the case where the project might not be found
@@ -133,7 +135,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             var projectsQuery = from p in _db.Projects
                                 select p;
 
-            bool searchPerformed = !string.IsNullOrEmpty(searchString);
+            bool searchPerformed = !String.IsNullOrEmpty(searchString);
 
             if (searchPerformed)
             {

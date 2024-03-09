@@ -17,12 +17,12 @@ namespace COMP2139_Labs.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.1")
+                .HasAnnotation("ProductVersion", "8.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("COMP2139_Labs.Models.Project", b =>
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.Project", b =>
                 {
                     b.Property<int>("ProjectID")
                         .ValueGeneratedOnAdd()
@@ -31,14 +31,16 @@ namespace COMP2139_Labs.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectID"));
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
@@ -51,7 +53,33 @@ namespace COMP2139_Labs.Migrations
                     b.ToTable("Projects");
                 });
 
-            modelBuilder.Entity("COMP2139_Labs.Models.ProjectTask", b =>
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectComment", b =>
+                {
+                    b.Property<int>("ProjectCommentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ProjectCommentID"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProjectID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProjectCommentID");
+
+                    b.HasIndex("ProjectID");
+
+                    b.ToTable("ProjectComments");
+                });
+
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", b =>
                 {
                     b.Property<int>("ProjectTaskID")
                         .ValueGeneratedOnAdd()
@@ -77,9 +105,20 @@ namespace COMP2139_Labs.Migrations
                     b.ToTable("ProjectTasks");
                 });
 
-            modelBuilder.Entity("COMP2139_Labs.Models.ProjectTask", b =>
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectComment", b =>
                 {
-                    b.HasOne("COMP2139_Labs.Models.Project", "Project")
+                    b.HasOne("COMP2139_Labs.Areas.ProjectManagement.Models.Project", "project")
+                        .WithMany()
+                        .HasForeignKey("ProjectID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("project");
+                });
+
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.ProjectTask", b =>
+                {
+                    b.HasOne("COMP2139_Labs.Areas.ProjectManagement.Models.Project", "Project")
                         .WithMany("Tasks")
                         .HasForeignKey("ProjectID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -88,7 +127,7 @@ namespace COMP2139_Labs.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("COMP2139_Labs.Models.Project", b =>
+            modelBuilder.Entity("COMP2139_Labs.Areas.ProjectManagement.Models.Project", b =>
                 {
                     b.Navigation("Tasks");
                 });

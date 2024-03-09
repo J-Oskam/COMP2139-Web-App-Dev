@@ -26,7 +26,7 @@
                     <td>@project.Name</td>
                     <td>@project.Description</td>
                     <td>
-                        @await Component.InvokeAsync("ProjectSummary", new {projectId = project.ProjectID})
+                        @await Component.InvokeAsync("ProjectSummary", new {projectID = project.ProjectID})
                     </td>
                     <td>
                         <a asp-action="Details" asp-route-id="@project.ProjectID" class="btn btn-info">Details</a>

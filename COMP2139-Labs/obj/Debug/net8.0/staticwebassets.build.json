@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "d7U9a9nsaH1mvyqDV2jq8+XwUotyIJMK/khmLzlqQpQ=",
+  "Hash": "mgah+JLjDfSwFUX+AY9XwHjVt8SiCq+3wDk4A+dd4YY=",
   "Source": "COMP2139-Labs",
   "BasePath": "_content/COMP2139-Labs",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\js\\ProjectComments.js",
+      "SourceId": "COMP2139-Labs",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\",
+      "BasePath": "_content/COMP2139-Labs",
+      "RelativePath": "js/ProjectComments.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ProjectComments.js"
     },
     {
       "Identity": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\js\\site.js",
