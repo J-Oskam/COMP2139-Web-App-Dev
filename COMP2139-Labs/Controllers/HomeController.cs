@@ -22,7 +22,7 @@ namespace COMP2139_Labs.Controllers {
         [HttpGet]
         public IActionResult GeneralSearch(string searchType, string searchString) {
             if(searchType == "Projects") {
-                return RedirectToAction("search", "Projects", new { searchString }); //Redirect to projects search
+                return RedirectToAction("search", "Projects", new { area = "ProjectManagement", searchString }); //Redirect to projects search
             } else if(searchType=="Tasks"){
                 int defaultProjectID = 1;
                 return RedirectToAction("Search", "Tasks", new { projectID = defaultProjectID, searchString }); //Redirect to tasks search assuming default projectID
