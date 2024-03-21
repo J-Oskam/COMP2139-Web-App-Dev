@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\areas\\projectmanagement\\views\\projects\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:areas\\projectmanagement\\views\\projects\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\js\\projectcomments.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:wwwroot\\js\\projectcomments.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\areas\\projectmanagement\\controllers\\projectcommentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:areas\\projectmanagement\\controllers\\projectcommentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\areas\\projectmanagement\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:areas\\projectmanagement\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 174,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,6 +47,67 @@
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "Areas\\ProjectManagement\\Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "Areas\\ProjectManagement\\Controllers\\ProjectsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T16:33:45.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectCommentController.cs",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Controllers\\ProjectCommentController.cs",
+              "RelativeDocumentMoniker": "Areas\\ProjectManagement\\Controllers\\ProjectCommentController.cs",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Controllers\\ProjectCommentController.cs",
+              "RelativeToolTip": "Areas\\ProjectManagement\\Controllers\\ProjectCommentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T16:14:10.838Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProjectComments.js",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\js\\ProjectComments.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\ProjectComments.js",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\wwwroot\\js\\ProjectComments.js",
+              "RelativeToolTip": "wwwroot\\js\\ProjectComments.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-03-21T15:47:01.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Views\\Projects\\Details.cshtml",
+              "RelativeDocumentMoniker": "Areas\\ProjectManagement\\Views\\Projects\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Views\\Projects\\Details.cshtml",
+              "RelativeToolTip": "Areas\\ProjectManagement\\Views\\Projects\\Details.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-21T15:28:39.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T15:10:49.413Z"
             }
           ]
         }

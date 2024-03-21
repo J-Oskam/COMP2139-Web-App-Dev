@@ -62,30 +62,36 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 
         [HttpPost("Create/{projectID:int}")]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Title", "Description", "ProjectID")] ProjectTask task)
+        public async Task<IActionResult> Create([Bind("Title", "Description", "ProjectID")] ProjectTask task)
         {
             if (ModelState.IsValid)
             {
-                _db.ProjectTasks.Add(task);
-                _db.SaveChanges();
-                return RedirectToAction("Index", new { projectID = task.ProjectID });
+                await _db.ProjectTasks.AddAsync(task);
+                await _db.SaveChangesAsync();
+                return RedirectToAction(nameof(Index), new { projectID = task.ProjectID });
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
+            //async call to retrieve the projects for SelectList
+            var projects = await _db.Projects.ToListAsync();
+
+            //repopulate the projects SelectList if returning to the form
+            ViewBag.Projects = new SelectList(projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
         [HttpGet("Edit/{id:int}")]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
+            var task = await _db.ProjectTasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.ProjectTaskID == id);
 
             if (task == null)
             {
                 return NotFound();
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
+            var projects = await _db.Projects.ToListAsync();
+
+            ViewBag.Projects = new SelectList(projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
@@ -105,14 +111,16 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
                 return RedirectToAction("Index", new { projectID = task.ProjectID });
             }
 
-            ViewBag.Projects = new SelectList(_db.Projects, "ProjectID", "Name", task.ProjectID);
+            var projects = await _db.Projects.ToListAsync();
+
+            ViewBag.Projects = new SelectList(projects, "ProjectID", "Name", task.ProjectID);
             return View(task);
         }
 
         [HttpGet("Delete/{projectID:int}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var task = _db.ProjectTasks.Include(t => t.Project).FirstOrDefault(t => t.ProjectTaskID == id);
+            var task = await _db.ProjectTasks.Include(t => t.Project).FirstOrDefaultAsync(t => t.ProjectTaskID == id);
 
             if (task == null)
             {
@@ -136,20 +144,32 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             return NotFound();
         }
 
-        [HttpGet("Search/{projectID:int}/{searchString?}")]
-        public async Task<IActionResult> Search(int projectID, string searchString)
+        //[HttpGet("Search/{projectID:int}/{searchString?}")]
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search(int? projectID, string searchString)
         {
             //var tasksQuery = _db.ProjectTasks.Where(t => t.ProjectID == projectID);
-            var tasksQuery = _db.ProjectTasks.AsQueryable();
+            var taskQuery = _db.ProjectTasks.AsQueryable();
+            bool searchPerformed = !String.IsNullOrEmpty(searchString);
 
-            if (!string.IsNullOrEmpty(searchString))
+            //if projectID is provided then apply is at a filter
+            if (projectID.HasValue) {
+                taskQuery = taskQuery.Where(t => t.ProjectID == projectID.Value);
+            }
+
+            //apply search string as a filter if it's present
+            if (!searchPerformed)
             {
-                tasksQuery = tasksQuery.Where(t => t.Title.Contains(searchString)
+                taskQuery = taskQuery.Where(t => t.Title.Contains(searchString)
                                             || t.Description.Contains(searchString));
             }
 
-            var tasks = await tasksQuery.ToListAsync();
+            //execute query
+            var tasks = await taskQuery.ToListAsync();
+
             ViewBag.ProjectID = projectID; // keeps track of current project
+            ViewData["SearchPerformed"] = searchPerformed;
+            ViewData["SearchString"] = searchString;
             return View("Index", tasks); // reuse the index view to display results
         }
     }

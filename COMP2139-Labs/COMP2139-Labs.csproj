@@ -21,8 +21,4 @@
     <PackageReference Include="SendWithBrevo" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\ProjectManagement\Data\" />
-  </ItemGroup>
-
 </Project>

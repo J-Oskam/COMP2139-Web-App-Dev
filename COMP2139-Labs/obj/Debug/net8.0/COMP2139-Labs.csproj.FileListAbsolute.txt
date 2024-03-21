@@ -15,6 +15,10 @@ C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Mi
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
@@ -40,6 +44,9 @@ C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Mi
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Identity.Client.dll
@@ -72,6 +79,8 @@ C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Nu
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\NuGet.ProjectModel.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\NuGet.Protocol.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\NuGet.Versioning.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\RestWrapper.dll
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\SendWithBrevo.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\System.CodeDom.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\System.Composition.Convention.dll
@@ -242,6 +251,7 @@ C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\CO
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.AssemblyInfoInputs.cache
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.AssemblyInfo.cs
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.csproj.CoreCompileInputs.cache
+C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.RazorAssemblyInfo.cache
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.RazorAssemblyInfo.cs
@@ -262,13 +272,3 @@ C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\re
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.pdb
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.genruntimeconfig.cache
 C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\ref\COMP2139-Labs.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\obj\Debug\net8.0\COMP2139-Labs.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\RestWrapper.dll
-C:\Users\Justin\source\repos\GitHub Repository\COMP2139-Labs\bin\Debug\net8.0\SendWithBrevo.dll

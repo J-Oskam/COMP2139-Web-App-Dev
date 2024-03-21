@@ -2,6 +2,7 @@
 using COMP2139_Labs.Data;
 using Microsoft.EntityFrameworkCore;
 using COMP2139_Labs.Areas.ProjectManagement.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 {
@@ -19,7 +20,8 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         //GET: Projects
         // ->/Projects
         [HttpGet("")]
-        public async Task<IActionResult> Index()
+        [Authorize]
+        public async Task<IActionResult> Index() //Task keyword means it returns a promise and it's of type IActionResult
         {
             var projects = await _db.Projects.ToListAsync();
             return View(projects);
@@ -58,8 +60,8 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             {
                 try
                 {
-                    _db.Update(project); //update does not need await
-                    await _db.SaveChangesAsync();
+                    _db.Update(project); //update does not need await because it only changes the data in memory
+                    await _db.SaveChangesAsync(); //this is where the updates are saved so it needs await
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -118,7 +120,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int ProjectId)
         {
-            var project = _db.Projects.Find(ProjectId);
+            var project = await _db.Projects.FindAsync(ProjectId);
             if (project != null)
             {
                 _db.Projects.Remove(project);

@@ -2,15 +2,17 @@
 
 function loadComments(projectID) {
     $.ajax({
-        url: '/ProjectManagement/ProjectComment/GetComments?projectID=' + projectID, method: 'GET',
+        url: '/ProjectManagement/ProjectComment/GetComments?projectID=' + projectID,
+        method: 'GET',
         success: function (data) {
-            var commentsHtml = '';
+            var commentHtml = '';
             for (var i = 0; i < data.length; i++) {
-                commentsHtml += '<div class="comment"';
-                commentsHtml += '<p>' + data[i].content + '</p>';
-                commentsHtml += '</div>';
+                commentHtml += '<div class="comment"';
+                commentHtml += '<p>' + data[i].content + '</p>';
+                commentHtml += '<span>Posted on ' + new Date(data[i].datePosted).toLocaledString() + '</span>';
+                commentHtml += '</div>';
             }
-            $('#commentsList').html(commentsHtml);
+            $('#commentList').html(commentHtml);
         }
     })
 }
@@ -22,7 +24,8 @@ $(document).ready(function () {
     $('#addCommentForm').submit(function (e) {
         e.preventDefault(); //prevents entire page from being refreshed on submit
         var formData = {
-            projectID: projectID, Content: $('#projectComments textarea[name="Content"]').val()
+            projectID: projectID,
+            Content: $('#projectComments textarea[name="Content"]').val()
         };
 
         $.ajax({
@@ -34,6 +37,8 @@ $(document).ready(function () {
                 if (response.success) {
                     $('#projectComments textarea[name="Content"]').val(''); //clears text area
                     loadComments(projectID); //reloads comments after adding a new one
+                } else {
+                    alert(response.message);
                 }
             },
 
@@ -42,4 +47,4 @@ $(document).ready(function () {
             }
         });
     });
-})
+});
