@@ -31,6 +31,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers {
             var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
             return Json(new { success = false, message = "Invalid comment data.", error = errors });
         }
+
         public IActionResult Index() {
             return View();
         }
