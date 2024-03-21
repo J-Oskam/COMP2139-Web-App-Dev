@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using COMP2139_Labs.Areas.ProjectManagement.Models;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;

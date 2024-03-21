@@ -1,4 +1,4 @@
-﻿//function to load comments
+//function to load comments
 
 function loadComments(projectID) {
     $.ajax({

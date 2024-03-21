@@ -1,4 +1,5 @@
-﻿@model List<Project>
+
+@model List<Project>
 @{
     ViewData["Title"] = "Projects";
     bool searchPerformed = ViewData["SearchPerformed"] as bool? ?? false;
@@ -45,5 +46,4 @@
         <p>No projects found.</p>
     }
 }
-
 <a asp-controller="Projects" asp-action="Create" class="btn btn-primary">Create New Project</a>

@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using COMP2139_Labs.Data;
 using Microsoft.EntityFrameworkCore;
 using COMP2139_Labs.Areas.ProjectManagement.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 {
@@ -20,15 +19,15 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         //GET: Projects
         // ->/Projects
         [HttpGet("")]
-        [Authorize]
-        public async Task<IActionResult> Index() //Task keyword means it returns a promise and it's of type IActionResult
+        public async Task<IActionResult> Index()
         {
             var projects = await _db.Projects.ToListAsync();
             return View(projects);
         }
 
         [HttpGet("Details/{id:int}")]
-        public async Task<IActionResult> Details(int id){
+        public async Task<IActionResult> Details(int id)
+        {
             var project = await _db.Projects.FirstOrDefaultAsync(p => p.ProjectID == id);
             if (project == null)
             {
@@ -60,8 +59,8 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
             {
                 try
                 {
-                    _db.Update(project); //update does not need await because it only changes the data in memory
-                    await _db.SaveChangesAsync(); //this is where the updates are saved so it needs await
+                    _db.Update(project); //update does not need await
+                    await _db.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -120,7 +119,7 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int ProjectId)
         {
-            var project = await _db.Projects.FindAsync(ProjectId);
+            var project = _db.Projects.Find(ProjectId);
             if (project != null)
             {
                 _db.Projects.Remove(project);

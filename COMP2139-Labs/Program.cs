@@ -22,11 +22,14 @@ builder.Services.AddRazorPages();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment()) {
+if (!app.Environment.IsDevelopment())
+{
     app.UseExceptionHandler("/Home/Error");
     app.UseStatusCodePagesWithRedirects("/Home/NotFound?statusCode={0}");
     app.UseHsts();
-} else {
+}
+else
+{
     app.UseDeveloperExceptionPage();
 }
 app.UseHttpsRedirection();
@@ -45,5 +48,4 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 app.Run();
