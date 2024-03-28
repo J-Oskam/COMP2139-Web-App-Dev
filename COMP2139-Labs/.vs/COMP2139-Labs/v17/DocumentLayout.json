@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|c:\\users\\justin\\source\\repos\\github repository\\comp2139-labs\\areas\\projectmanagement\\views\\projects\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1E5D676C-74EC-4FF7-ACCE-7F8750BC59A9}|COMP2139-Labs.csproj|solutionrelative:areas\\projectmanagement\\views\\projects\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 174,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,19 +30,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Views\\Projects\\Create.cshtml",
-              "RelativeDocumentMoniker": "Areas\\ProjectManagement\\Views\\Projects\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Justin\\source\\repos\\GitHub Repository\\COMP2139-Labs\\Areas\\ProjectManagement\\Views\\Projects\\Create.cshtml",
-              "RelativeToolTip": "Areas\\ProjectManagement\\Views\\Projects\\Create.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-03-21T18:53:01.581Z",
-              "EditorCaption": ""
             }
           ]
         }
