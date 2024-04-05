@@ -1,5 +1,5 @@
-﻿@using COMP2139_Labs.Areas.ProjectManagement.Models
-@inject SignInManager<ApplicationUser> SignInManager
+﻿@inject SignInManager<ApplicationUser> SignInManager
+
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
