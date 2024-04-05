@@ -1,20 +1,32 @@
 ﻿using Microsoft.AspNetCore.Identity.UI.Services;
-using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
-using SendWithBrevo;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
+using System.Net.Mail;
 
 namespace COMP2139_Labs.Services {
     public class EmailSender : IEmailSender {
-        private readonly string _brevoKey;
+        private readonly IConfiguration _configuration;
 
         public EmailSender(IConfiguration configuration) {
-            _brevoKey = configuration["Brevo:ApiKey"];
+            _configuration = configuration;
         }
         public async Task SendEmailAsync(string email, string subject, string htmlMessage) {
-            var client = new BrevoClient(_brevoKey);
-            //var from = new Email
+            var emailSettings = _configuration.GetSection("EmailSettings");
+            var smtpClient = new SmtpClient {
+                Host = emailSettings["SmtpServer"],
+                Port = int.Parse(emailSettings["SmtpPort"]),
+                EnableSsl = true,
+                Credentials = new NetworkCredential(emailSettings["SmtpUsername"], emailSettings["SmtpPassword"])
+            };
 
-            throw new NotImplementedException();
+            var mailMessage = new MailMessage {
+                From = new MailAddress("justin.oskam@georgebrown.ca"),
+                Subject = subject,
+                Body = htmlMessage,
+                IsBodyHtml = true,
+            };
+            mailMessage.To.Add(email);
+            await smtpClient.SendMailAsync(mailMessage);
         }
     }
 }
