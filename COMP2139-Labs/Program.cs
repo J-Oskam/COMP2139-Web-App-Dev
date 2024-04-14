@@ -5,6 +5,7 @@ using COMP2139_Labs.Areas.ProjectManagement.Models;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using COMP2139_Labs.Services;
 using COMP2139_Labs.Enum;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,9 +13,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
+//this breaks my code and is virtually unrepairable
+//builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
 
-builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultUI()
     .AddDefaultTokenProviders();
@@ -22,20 +24,27 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
+
 //ensures whenever IemailSender is inejcted our instance of EmailSender is provided
 builder.Services.AddSingleton<IEmailSender, EmailSender>();
+
+builder.Host.UseSerilog((hostContext, services, configuration) => {
+    configuration.ReadFrom.Configuration(hostContext.Configuration);
+});
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ISessionService, SessionService>();
+
+builder.Services.AddSession();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
+if (!app.Environment.IsDevelopment()) {
     app.UseExceptionHandler("/Home/Error");
     app.UseStatusCodePagesWithRedirects("/Home/NotFound?statusCode={0}");
     app.UseHsts();
-}
-else
-{
+} else {
     app.UseDeveloperExceptionPage();
 }
 
@@ -64,7 +73,7 @@ app.UseRouting();
 app.UseAuthorization();
 app.UseAuthentication();
 app.MapRazorPages();
-
+app.UseSession();
 app.MapControllerRoute(
     name: "areas",
     pattern: "{area:exists}/{controller=Projects}/{action=Index}/{id?}");
