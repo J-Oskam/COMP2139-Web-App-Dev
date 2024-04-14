@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using COMP2139_Labs.Data;
 using Microsoft.EntityFrameworkCore;
 using COMP2139_Labs.Areas.ProjectManagement.Models;
+using COMP2139_Labs.Services;
 
 namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
 {
@@ -9,11 +10,14 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
     [Route("[area]/[controller]/[action]")]
     public class ProjectsController : Controller
     {
-
         private readonly AppDbContext _db;
-        public ProjectsController(AppDbContext db)
+        private readonly ILogger<ProjectsController> _logger;
+        private readonly ISessionService _sessionService;
+        public ProjectsController(AppDbContext db, ILogger<ProjectsController> logger, ISessionService sessionService)
         {
             _db = db;
+            _logger = logger;
+            _sessionService = sessionService;
         }
 
         //GET: Projects
@@ -21,13 +25,24 @@ namespace COMP2139_Labs.Areas.ProjectManagement.Controllers
         [HttpGet("")]
         public async Task<IActionResult> Index()
         {
-            var projects = await _db.Projects.ToListAsync();
-            return View(projects);
+            _logger.LogInformation("Calling project Index action");
+            try {
+                var projects = await _db.Projects.ToListAsync();
+                var value = _sessionService.GetSessionData<int?>("Visited") ?? 0;
+                _sessionService.SetSessionData("Visited", value + 1);
+
+                _logger.LogInformation("Hello hello");
+                return View(projects);
+            } catch(Exception e) {
+                _logger.LogError(e.Message);
+                return View(null);
+            }
         }
 
         [HttpGet("Details/{id:int}")]
         public async Task<IActionResult> Details(int id)
         {
+            _logger.LogInformation("Calling project details action");
             var project = await _db.Projects.FirstOrDefaultAsync(p => p.ProjectID == id);
             if (project == null)
             {
